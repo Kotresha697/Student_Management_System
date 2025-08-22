@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Student Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+        }
+
+        header {
+            background-color: #2c3e50;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .section-wrapper {
+            text-align: center;
+            margin: 40px auto 20px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 30px;
+        }
+
+        .card {
+            width: 200px;
+            height: 160px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        .card i {
+            font-size: 38px;
+            margin-bottom: 12px;
+            color: #3498db;
+        }
+
+        .card p {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Student Information Management System</h1>
+    </header>
+
+    <!-- Student Management -->
+    <div class="section-wrapper">
+        <div class="section-title">Student Management</div>
+        <div class="dashboard-section">
+            <a href="{{ url_for('add_student') }}" class="card">
+                <i class="fa fa-user-plus"></i>
+                <p>Add Student</p>
+            </a>
+            <a href="{{ url_for('view_students') }}" class="card">
+                <i class="fa fa-users"></i>
+                <p>View Students</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Course Management -->
+    <div class="section-wrapper">
+        <div class="section-title">Course Management</div>
+        <div class="dashboard-section">
+            <a href="{{ url_for('add_course') }}" class="card">
+                <i class="fa fa-book"></i>
+                <p>Add Course</p>
+            </a>
+            <a href="{{ url_for('view_courses') }}" class="card">
+                <i class="fa fa-book-open"></i>
+                <p>View Courses</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Enrollment -->
+    <div class="section-wrapper">
+        <div class="section-title">Enrollment</div>
+        <div class="dashboard-section">
+            <a href="{{ url_for('enroll_student') }}" class="card">
+                <i class="fa fa-user-graduate"></i>
+                <p>Enroll Student</p>
+            </a>
+            <a href="{{ url_for('view_enrollments') }}" class="card">
+                <i class="fa fa-clipboard-list"></i>
+                <p>View Enrollments</p>
+            </a>
+            <a href="{{ url_for('download_enrollments_excel') }}" class="card">
+                <i class="fa fa-file-excel"></i>
+                <p>Download Excel</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Account -->
+    <div class="section-wrapper">
+        <div class="section-title">Account</div>
+        <div class="dashboard-section">
+            <a href="{{ url_for('login') }}" class="card">
+                <i class="fa fa-sign-out-alt"></i>
+                <p>Logout</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
+
